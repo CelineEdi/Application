@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Convetisseur de numéro</title>
+</head>
+<body>
+        <div>
+            <h1>Convertissez votre numéro à 10 chiffres</h1>
+            <form action="" method="get">
+                <input type="number" name="num" id="num" >
+                <button type="button" onclick="getclick()">convertir</button>
+            </form>
+              <p>votre numéro à dix chiffres est:<span id="affiche"></span> </p>
+        
+        </div>
+
+    
+
+    <script>
+        var orange =  [07, 87, 57, 49, 09, 08, 47, 48, 49, 67, 69,68,77,78,79,88,89,97,98,99];
+        var mtn = [04,05,06,44,45,46,54,55,56,64,65,66,74,75,76,84,85,86,94,95,96];
+        var moov = [01, 02, 03 ,41,42,43,51,52,53,61,62,63,71,72,73,81,82,83,91,92,93];
+
+        function getclick(){
+            var test = document.getElementById("num").value;
+            var numero =test[0] + test[1];
+            var affich = document.getElementById("affiche");
+
+            if(test.length==8){
+                if(orange.includes(parseInt(numero))){
+                    affich.innerHTML="07" + test;
+                }
+                else if(mtn.includes(parseInt(numero))){
+                affich.innerHTML="05" + test;
+
+                }
+                else if(moov.includes(parseInt(numero))){
+                    affich.innerHTML="01" + test ;
+
+                }
+            }
+            else{
+                affich.innerHTML="Le format du numéro  est incorret"
+            }
+            
+           
+    }
+     </script>
+</body>
+</html>
